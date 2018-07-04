@@ -8,13 +8,13 @@ const App = () => (
       <ul>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/about'>About</Link></li>
-        <li><Link to='/friends'>Friends</Link></li>
+        <li><Link to='/cats'>Cats</Link></li>
       </ul>
 
-      <hr />
+
       <Route exact path='/' component={Home} />
       <Route path='/about' component={About} />
-      <Route path='/friends' component={Friends} />
+      <Route path='/cats' component={Friends} />
     </div>
   </BrowserRouter>
 )
@@ -52,6 +52,7 @@ class Friends extends Component {
     })
   }
 
+
   handleVote(id) {
     this.setState({
       [id]: this.state[id] + 1
@@ -61,21 +62,24 @@ class Friends extends Component {
   render() {
     return (
       <div>
-        <h2>Friends</h2>
-        <Route exact path='/friends' render={props => <FriendList handleVote={this.handleVote} />} />
-        <Route path='/friends/:id' render={props => <Friend match={props.match} votes={this.state} />} />
+        <h2>Cats</h2>
+        <Route exact path='/cats' render={props => <FriendList handleVote={this.handleVote} />} />
+        <Route path='/cats/:id' render={props => <Friend match={props.match} votes={this.state} />} />
       </div>
     )
   }
 }
+
+
+
 const FriendList = props => (
   <div className='FriendList'>
     {FRIENDS.map(friend => (
       <li key={friend.id}>
       <h3>{friend.nameJa}</h3>
-        <Link to={`/friends/${friend.id}`}>詳細(得票数)</Link>
+        <Link to={`/cats/${friend.id}`}>詳細(得票数)</Link>
         <img src={friend.imgUrl}  width="300px" height="300px" alt="ねこ"/>
-        <div onClick={() => props.handleVote(friend.id)}>投票する！</div>
+        <div onClick={() => props.handleVote(friend.id)} className="voteButton">投票する！</div>
       </li>
     ))}
   </div>
@@ -94,7 +98,7 @@ const Friend = props => {
     )
   }
 
-  const containerStyle = { border: '1px gray solid', display: 'block', padding: 10,width: '600px',margin: '0 auto'}
+  const containerStyle = { border: '1px gray solid', display: 'block', padding: 10,width: '300px',overflow: 'hidden'}
   const contentsStyle = { margin: '0 auto'}
   const barStyle = { width: calWidth(vote),height: '1em'}
   function calWidth(vote){

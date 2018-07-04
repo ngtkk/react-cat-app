@@ -15,6 +15,10 @@ a{
 	float: left;
 	margin: 0 1rem;
 	display: block;
+	user-select: none; /* CSS3 */
+-moz-user-select: none; /* Firefox */
+-webkit-user-select: none; /* Safari、Chromeなど */
+-ms-user-select: none; /* IE10かららしい */
 }
 
 h2{
@@ -53,7 +57,7 @@ img{
 	float: left;
 	margin: 0.5rem 1.0rem;}
 
-.FriendList div{
+.FriendList div.voteButton{
 	color: white;
 	font-weight: 700;
 	text-align: center;
@@ -82,3 +86,8 @@ img{
 	font-size: 2.0em;
 	margin-left: 1rem;
 }
+div.voteButton:active:after  {
+            content: url(nikukyu.png);
+            width: 16px;
+            height: 16px;
+        }
