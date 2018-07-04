@@ -2,6 +2,8 @@
 
 [こちら](https://qiita.com/m4iyama/items/b4ca1773580317e7112e)のページを参考に作りました。
 
-![スクリーンショット](https://imgur.com/wcQ0qNo "Catsページ")
+投票するボタンを押下した回数分、
+詳細ページのバーが伸びる機能をつけました。
 
-![スクリーンショット２](https://imgur.com/RezKRKS "得票数")
+<img src="https://i.imgur.com/wcQ0qNo.png" width="300px" alt="Catsページ">
+<img src="https://i.imgur.com/RezKRKS.png" width="150px" alt="得票数">
